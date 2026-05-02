@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+</head>
+
+<body>
+
+   <div class="page_shell">
+
+    <!-- Side Bar -->
+    <nav class="sidebar" id="sidebar">
+
+        <div class="nav_logo">
+            <div class="logo_icon">✦
+            </div>
+            <span class="logo_text">Vision</span>
+        </div>
+
+        <ul class="nav_links">
+            <li>
+                <a href="home.html" class="nav_link" data-page="home">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="project_abstract.html" class="nav_link" data-page = "projects">
+                    projects
+                </a>
+            </li>
+            <li>
+                <a href="logs.html" class="nav_link" data-page = "logs">
+                    logs
+                </a>
+            </li>
+        </ul>
+        <div class="nav_footer">
+            .
+        </div>
+    </nav>
+
+    <main class="main_theme" id = "introlist">
+
+        <canvas id="starfield" class="starfield-canvas"></canvas>
+
+        <header class="page_header">
+            <h1 class="greeting">
+                <span class="greeting_line1">Greetings,</span>
+                <span class="greeting_line2">Visitor.</span>
+            </h1>
+            <p class="greeting_sub">....system online</p>
+        </header>
+
+        <section class="introduction">
+            <div class="section_tag">[Just a fellow Human, a social animal.....wait Im not very social. Just a animal?!]</div>
+            <p class="intro_text">
+                My name is Riwas Budhathoki. Following are some of notable projects that I have been part of. 
+                The abstracts are in the <a href="project_abstract.html">project abstract</a> page.
+            </p>
+        </section>
+        <section class="project_section">
+            <div class="section_tag">[Projects]</div>
+        <div class="project_list">
+
+        <a href="project_abstract.html" class="project_entry">
+            <div class="project_id">0001</div>
+            <div class="project_info">
+                <h3 class = project_title>SLAM</h3>
+                <p class="project_text">A system to map any given environment with Monocular Camera, in addition to localizing the camera at any frame.</p>
+                
+            </div>
+            
+            <div class="project_status status__partial_complete">Foundation Completion</div>
+            <a class="link" href="https://github.com/RiwasBudhathoki35/SLAM-using-GTSAM/tree/slam_rebase">
+                link to github
+                </a>
+            <!-- yet to take real time -->
+        </a>
+
+      </div>
+      </section>
+    </main>
+   </div>
+   
+   <a href="message.html" id="send_message">click here to send the user's terminal a message</a>
+    <!-- <a href="#" class="link" id="play">play</a> -->
+   <script src="../js/audio.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs</title>
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/abstract.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+</head>
+<body>
+   <div class="page_shell">
+    <nav class="sidebar" id="sidebar">
+        <div class="nav_logo">
+            <div class="logo_icon">ME</div>
+            <span class="logo_text">Vision</span>
+        </div>
+        <ul class="nav_links">
+            <li>
+                <a href="home.html" class="nav_link" data-page="home">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="project_abstract.html" class="nav_link" data-page = "projects">
+                    projects
+                </a>
+            </li>
+            <li>
+                <a href="logs.html" class="nav_link" data-page = "logs">
+                    logs
+                </a>
+            </li>
+        </ul>
+        <div class="nav_footer">
+            .
+        </div>
+    </nav>
+
+
+    <main class="main_theme">
+
+        <header class="page_header">
+            <h1 class="greeting">
+                <span class="greeting_line1">Base to</span>
+                <span class="greeting_line2">Earth Station.</span>
+            </h1>
+            <div class="header_inner">
+            <p class="greeting_sub" id="now_playing">...............online</p>
+            <div class="iroh">
+                <button id = "play">play a random song</button> <!--from the sources directory ofcourse-->
+                <button id="pause">ppause</button>
+                <!-- now playing...... -->
+            </div>
+            </div>
+		    <!-- <p id=now_playing>NN</p> -->
+        </header>
+
+        <div class="abstract_feed">
+            <article class="abstract_entry">
+                <h2 class="abstract_title">Log?</h2>
+                <div class="abstract_body">
+                    <p>Messages from my terminal to Earth Station.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+   </div>
+   <script src="../js/json_to_abstract.js"></script>
+   <script src="../js/audio.js" ></script>
+</body>
+</html>
