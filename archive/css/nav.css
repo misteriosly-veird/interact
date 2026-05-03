@@ -209,3 +209,81 @@ html, body {
 
 
 /* uncle iroh music player */
+
+/* form for message */
+/* Target only elements inside the form container */
+
+/* Example: hide it initially off-screen */
+
+#form-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: var(--accent-cyan);
+    font-size: 14px;
+    background-color: #000000; /* classic gray window background */
+    padding: 20px;
+    width: max-content;
+    border: 2px solid #808080;
+    box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080; /* bevel effect */
+    animation: fadeUp 0.7s 0.8s ease both;
+}
+
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Labels */
+#form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs and textareas */
+#form-container input[type="text"],
+#form-container input[type="email"],
+#form-container input[type="password"],
+#form-container textarea,
+#form-container select {
+    display: block;
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 10px;
+    border: 2px solid #808080;
+    background-color: #fff;
+    box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080;
+    font-family: monospace;
+}
+
+/* Buttons */
+#form-container button {
+    background-color: #e0e0e0;
+    border: 2px solid #808080;
+    padding: 4px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: -1px -1px 0 #fff, 1px 1px 0 #808080;
+}
+
+#form-container button:active {
+    box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #fff;
+}
+
+/* Optional: fieldset for grouping */
+/* #form-container fieldset {
+    border: 2px solid #808080;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #dcdcdc;
+} */
+
+/* Optional: legend style */
+/* #form-container legend {
+    font-weight: bold;
+} */

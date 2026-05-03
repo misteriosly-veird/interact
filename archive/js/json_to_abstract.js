@@ -1,8 +1,22 @@
+let json_path = "";
+
+const path = window.location.pathname;
+
+if (path.includes("logs")) {
+    json_path = "../feed/log.json";
+} else if (path.includes("abstract")) {
+    json_path = "../feed/abstract.json";
+} else {
+    json_path = "../feed/extracted.json"
+}
+
+
+
 async function loadFeed() {
     const container = document.querySelector(".abstract_feed");
 
     try {
-        const res = await fetch("../feed/extracted.json");
+        const res = await fetch(json_path);
         const posts = await res.json();
 
         posts.forEach(post => {
