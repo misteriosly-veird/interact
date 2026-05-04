@@ -6,8 +6,11 @@ const fetch = require("node-fetch")
 const dotenv = require("dotenv")
 const path = require("path");
 const fs = require("fs");
+const {MongoClient} = require("mongodb");
 
-// dotenv.config();
+dotenv.config();
+const uri = process.env.MONGODB_URI
+const client = new MongoClient(uri);
 
 const store_route = express();
 
@@ -21,6 +24,7 @@ store_route.use(express.urlencoded({ extended: true }));
 
 
 store_route.post("/api/send", async (req, res) => {
+  console.log("req received")
   try {
     const { name, message } = req.body;
 
@@ -34,6 +38,19 @@ store_route.post("/api/send", async (req, res) => {
       timestamp: new Date().toISOString(),
       ip: req.ip
     };
+	
+    await client.connect();
+    const db = client.db("logsDB")
+    const collection = db.collection("logs")
+
+    await collection.insertOne({
+      name: name,
+      message: message,
+      timestamp: new Date(),
+      ip: req.ip
+    })
+
+    console.log("LOG inserted")
 
     const filePath = path.join(__dirname, "logs.json");
 
@@ -55,32 +72,15 @@ store_route.post("/api/send", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
+  } finally{
+    await client.close();
   }
 });
-
-// store_route.post("/api/send", async (req, res) => {
-//   console.log("preparing....")
-//   try {
-//     const { name, message } = req.body;
-
-//     if (!name || !message) {
-//       return res.status(400).json({ error: "Missing fields" });
-//     }
-//     console.log(req.body)
-
-//     res.redirect("http://localhost:5500/archive/pages/logs.html")
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ error: "Server error" });
-//   }
-// });
 
 const PORT = 3000;
 store_route.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
 
 store_route.get("/logs", (req, res) => {
   try {
