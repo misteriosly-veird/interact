@@ -30,7 +30,13 @@
 // List of songs in your ../sources/ folder
 const songs = [
     "../sources/little_soilder_boy_avatar_iroh.mp3",
+   
     "../sources/canon_rock_jerryC.mp3",
+    "../sources/canon_in_d_major.mp3",
+
+    "../sources/nuvole_bianche_apparently_white_clouds_well_beautyAnyway.mp3",
+    "../sources/ani_choying_drolma_perspective.mp3",
+    "../sources/miletAnytime_ANywhere_frieren.mp3",
 ];
 
 let song = null;
