@@ -271,7 +271,7 @@
 .link:visited{
   text-decoration: none;
   /* color: var(--text-main); */
-  color: yellowgreen;
+  color: var(--accent-cyan);
   font-style: italic;
 }
 
